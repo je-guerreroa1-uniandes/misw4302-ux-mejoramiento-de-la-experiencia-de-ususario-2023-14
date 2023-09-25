@@ -52,5 +52,6 @@
 
     <style name="Theme.OptiTask.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.OptiTask.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+<!--    <style name="Theme.OptiTask.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+    <style name="Theme.OptiTask.PopupOverlay" parent="Theme.OptiTask" />
 </resources>
