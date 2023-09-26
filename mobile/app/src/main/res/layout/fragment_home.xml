@@ -6,17 +6,250 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".TimerActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- Hour TextView -->
+                <TextView
+                    android:id="@+id/hourTextView"
+                    android:layout_width="@dimen/timer_segment_margin"
+                    android:layout_height="@dimen/timer_segment_margin"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="48sp"
+                    android:background="@drawable/timer_segment_background"
+                    android:textStyle="bold"
+                    android:layout_margin="4dp"
+                    app:fontFamily="@font/font_family_abeezee"
+                    />
+
+                <TextView
+                    android:id="@+id/minutesSeparatorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/font_family_abeezee"/>
+
+                <!-- Minutes TextView -->
+                <TextView
+                    android:id="@+id/minuteTextView"
+                    android:layout_width="@dimen/timer_segment_margin"
+                    android:layout_height="@dimen/timer_segment_margin"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="48sp"
+                    android:background="@drawable/timer_segment_background"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/font_family_abeezee"
+                    />
+
+                <TextView
+                    android:id="@+id/secondsSeparatorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=":"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/font_family_abeezee"
+                    />
+
+                <!-- Seconds TextView -->
+                <TextView
+                    android:id="@+id/secondTextView"
+                    android:layout_width="@dimen/timer_segment_margin"
+                    android:layout_height="@dimen/timer_segment_margin"
+                    android:gravity="center"
+                    android:text="00"
+                    android:textSize="48sp"
+                    android:background="@drawable/timer_segment_background"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/font_family_abeezee"
+                    />
+            </LinearLayout>
+
+            <GridLayout
+                android:id="@+id/grid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="4"
+                android:layout_gravity="center"
+                android:layout_margin="8dp">
+
+            <!-- Number Buttons -->
+                <Button
+                    android:id="@+id/button_1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="1"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/font_family_noto_serif"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin" />
+
+                <Button
+                    android:id="@+id/button_2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="2"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/font_family_abeezee"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="3"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/font_family_abeezee"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="4"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/font_family_abeezee"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="5"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/font_family_abeezee"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="6"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/font_family_abeezee"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_7"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="7"
+                    android:textSize="24sp"
+                    app:fontFamily="@font/font_family_abeezee"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_8"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="8"
+                    android:textSize="24sp"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="9"
+                    android:textSize="24sp"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_00"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="00"
+                    android:textSize="24sp"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+                <Button
+                    android:id="@+id/button_0"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/imageButton"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_row="0"-->
+<!--                    android:src="@android:drawable/ic_input_delete" />-->
+
+                <!-- Start/Stop Button -->
+                <Button
+                    android:id="@+id/start_stop_button"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:text="Start"
+                    android:textSize="18sp"
+                    app:backgroundTint="?attr/colorOnSecondaryContainer"
+                    android:background="@drawable/circular_button_background"
+                    android:layout_margin="@dimen/button_margin"/>
+
+                <!-- Reset Button -->
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
