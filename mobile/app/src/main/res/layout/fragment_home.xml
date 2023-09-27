@@ -25,6 +25,15 @@
             android:padding="16dp"
             tools:context=".TimerActivity">
 
+            <TextView
+                android:id="@+id/subheader"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Sesión actual"
+                android:lineSpacingExtra="-3sp"
+                android:gravity="top"
+                />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,18 +43,33 @@
                 android:orientation="horizontal">
 
                 <!-- Hour TextView -->
-                <TextView
-                    android:id="@+id/hourTextView"
-                    android:layout_width="@dimen/timer_segment_margin"
-                    android:layout_height="@dimen/timer_segment_margin"
-                    android:gravity="center"
-                    android:text="00"
-                    android:textSize="48sp"
-                    android:background="@drawable/timer_segment_background"
-                    android:textStyle="bold"
-                    android:layout_margin="4dp"
-                    app:fontFamily="@font/font_family_abeezee"
-                    />
+                <!-- Hour TextView and Label -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/hourTextView"
+                        android:layout_width="@dimen/timer_segment_margin"
+                        android:layout_height="@dimen/timer_segment_margin"
+                        android:gravity="center"
+                        android:text="00"
+                        android:textSize="48sp"
+                        android:background="@drawable/timer_segment_background"
+                        android:textStyle="bold"
+                        android:layout_margin="4dp"
+                        app:fontFamily="@font/font_family_abeezee" />
+
+                    <TextView
+                        android:id="@+id/hourLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hour"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/font_family_abeezee" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/minutesSeparatorTextView"
@@ -55,22 +79,37 @@
                     android:text=":"
                     android:textSize="48sp"
                     android:textStyle="bold"
-                    app:fontFamily="@font/font_family_abeezee"/>
-
-                <!-- Minutes TextView -->
-                <TextView
-                    android:id="@+id/minuteTextView"
-                    android:layout_width="@dimen/timer_segment_margin"
-                    android:layout_height="@dimen/timer_segment_margin"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:gravity="center"
-                    android:text="00"
-                    android:textSize="48sp"
-                    android:background="@drawable/timer_segment_background"
-                    android:textStyle="bold"
                     app:fontFamily="@font/font_family_abeezee"
                     />
+
+                <!-- Minutes TextView and Label -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/minuteTextView"
+                        android:layout_width="@dimen/timer_segment_margin"
+                        android:layout_height="@dimen/timer_segment_margin"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:text="00"
+                        android:textSize="48sp"
+                        android:background="@drawable/timer_segment_background"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/font_family_abeezee" />
+
+                    <TextView
+                        android:id="@+id/minutesLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minutes"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/font_family_abeezee" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/secondsSeparatorTextView"
@@ -84,17 +123,32 @@
                     />
 
                 <!-- Seconds TextView -->
-                <TextView
-                    android:id="@+id/secondTextView"
-                    android:layout_width="@dimen/timer_segment_margin"
-                    android:layout_height="@dimen/timer_segment_margin"
-                    android:gravity="center"
-                    android:text="00"
-                    android:textSize="48sp"
-                    android:background="@drawable/timer_segment_background"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/font_family_abeezee"
-                    />
+                <!-- Seconds TextView and Label -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/secondTextView"
+                        android:layout_width="@dimen/timer_segment_margin"
+                        android:layout_height="@dimen/timer_segment_margin"
+                        android:gravity="center"
+                        android:text="00"
+                        android:textSize="48sp"
+                        android:background="@drawable/timer_segment_background"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/font_family_abeezee" />
+
+                    <TextView
+                        android:id="@+id/secondsLabelTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seconds"
+                        android:textSize="18sp"
+                        app:fontFamily="@font/font_family_abeezee" />
+                </LinearLayout>
             </LinearLayout>
 
             <GridLayout
@@ -109,106 +163,109 @@
             <!-- Number Buttons -->
                 <Button
                     android:id="@+id/button_1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="1"
-                    android:textSize="24sp"
-                    app:fontFamily="@font/font_family_noto_serif"
+                    android:textSize="@dimen/timer_button_font"
+                    app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
-                    android:layout_margin="@dimen/button_margin" />
+                    android:layout_margin="@dimen/button_margin"
+                    />
 
                 <Button
                     android:id="@+id/button_2"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="2"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
                     app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_3"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="3"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
                     app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_4"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="4"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
                     app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_5"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="5"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
                     app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_6"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="6"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
                     app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_7"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="7"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
                     app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_8"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="8"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
+                    app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_9"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="9"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
+                    app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_00"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="00"
@@ -217,38 +274,48 @@
                     android:layout_margin="@dimen/button_margin"/>
                 <Button
                     android:id="@+id/button_0"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:text="0"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/timer_button_font"
+                    app:fontFamily="@font/font_family_abeezee"
                     android:background="@drawable/circular_button_background"
                     android:layout_margin="@dimen/button_margin"/>
-
-<!--                <ImageButton-->
-<!--                    android:id="@+id/imageButton"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_row="0"-->
-<!--                    android:src="@android:drawable/ic_input_delete" />-->
 
                 <!-- Start/Stop Button -->
-                <Button
+                <ImageButton
                     android:id="@+id/start_stop_button"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/timer_button_diameter"
+                    android:layout_height="@dimen/timer_button_diameter"
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    android:text="Start"
-                    android:textSize="18sp"
-                    app:backgroundTint="?attr/colorOnSecondaryContainer"
+                    android:src="@android:drawable/ic_input_delete"
+                    app:backgroundTint="?attr/colorSecondaryContainer"
                     android:background="@drawable/circular_button_background"
-                    android:layout_margin="@dimen/button_margin"/>
+                    android:layout_margin="@dimen/button_margin"
+                    app:tint="?attr/colorOnSecondaryContainer" />
 
                 <!-- Reset Button -->
 
             </GridLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Etiqueta" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>
