@@ -19,21 +19,21 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$bright-navy-blue-palette: (
-  50: var(--md-source),
-  100: #badffb,
-  200: #8fcbfa,
-  300: #61b7f7,
-  400: #3ca7f6,
-  500: #0c98f5,
-  600: #078ae7,
-  700: #0078d4,
-  800: #0067c2,
-  900: #0049a3,
-  A100: #c2e4ff,
-  A200: #addcff,
-  A400: #1f9eff,
-  A700: #00518f,
+$primary-palette: (
+  50: var(--md-ref-palette-primary0),
+  100: var(--md-ref-palette-primary10),
+  200: var(--md-ref-palette-primary20),
+  300: var(--md-ref-palette-primary30),
+  400: var(--md-ref-palette-primary40),
+  500: var(--md-ref-palette-primary50),
+  600: var(--md-ref-palette-primary60),
+  700: var(--md-ref-palette-primary70),
+  800: var(--md-ref-palette-primary80),
+  900: var(--md-ref-palette-primary90),
+  A100: var(--md-sys-color-primary-light),
+  A200: var(--md-sys-color-primary-container-light),
+  A400: var(--md-sys-color-surface-tint-light),
+  A700: var(--md-sys-color-inverse-primary-light),
   contrast: (
     50: rgba(black, 0.87),
     100: rgba(black, 0.87),
@@ -52,7 +52,7 @@ $bright-navy-blue-palette: (
   )
 );
 
-$optitask-primary: mat.define-palette($bright-navy-blue-palette);
+$optitask-primary: mat.define-palette($primary-palette);
 $optitask-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
