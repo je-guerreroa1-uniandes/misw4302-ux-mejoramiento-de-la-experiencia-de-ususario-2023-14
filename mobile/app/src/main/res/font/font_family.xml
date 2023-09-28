@@ -3,17 +3,17 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/ABeeZeeRegular" />
+        android:font="@font/a_bee_zee_regular" />
     <font
         android:fontStyle="italic"
         android:fontWeight="400"
-        android:font="@font/ABeeZeeItalic" />
+        android:font="@font/a_bee_zee_italic" />
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/NotoSerifDisplayRegular" />
+        android:font="@font/noto_serif_display_regular" />
     <font
         android:fontStyle="italic"
         android:fontWeight="400"
-        android:font="@font/NotoSerifDisplayItalic" />
+        android:font="@font/noto_serif_display_italic" />
 </font-family>

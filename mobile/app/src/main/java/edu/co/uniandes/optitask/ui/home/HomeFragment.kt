@@ -62,6 +62,8 @@ class HomeFragment : Fragment() {
 
     private fun updateTimerDisplay() {
         val time = String.format("%02d:%02d:%02d", hours, minutes, seconds)
-        binding.timerDisplay.text = time
+        binding.hourTextView.text = hours.toString()
+        binding.minuteTextView.text = minutes.toString()
+        binding.secondTextView.text = seconds.toString()
     }
 }

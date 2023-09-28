@@ -3,9 +3,9 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/NotoSerifDisplayRegular" />
+        android:font="@font/noto_serif_display_regular" />
     <font
         android:fontStyle="italic"
         android:fontWeight="400"
-        android:font="@font/NotoSerifDisplayItalic" />
+        android:font="@font/noto_serif_display_italic" />
 </font-family>
