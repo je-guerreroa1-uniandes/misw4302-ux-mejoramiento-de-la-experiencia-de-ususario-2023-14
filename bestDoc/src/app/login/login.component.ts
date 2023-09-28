@@ -24,7 +24,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin() {
-    // TODO: Implement login logic
+    if (this.usuario === 'usuarioValido' && this.password === 'contrasenaValida') {
+      // Credenciales válidas, abrir el mat-sidenav
+      console.log('Credenciales correctas');
+    } else {
+      // Credenciales no válidas, mostrar un mensaje de error o realizar otra acción.
+      console.log('Credenciales incorrectas');
+    }
   }
 
 }

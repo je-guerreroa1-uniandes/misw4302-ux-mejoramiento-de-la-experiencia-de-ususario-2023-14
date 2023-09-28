@@ -7,7 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WebComponent } from './web/web.component';
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation/navigation.component';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list'; // Importa el módulo MatListModule
+ // Importa el módulo MatSidenavModule
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,8 @@ import { NavigationComponent } from './navigation/navigation/navigation.componen
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
