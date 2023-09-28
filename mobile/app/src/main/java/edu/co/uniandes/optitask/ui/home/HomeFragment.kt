@@ -18,14 +18,13 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private var hours = 0
-    private var minutes = 0
-    private var seconds = 0
+    private var timeInput = ""
+    private val maxInputLength = 6 // HH:MM:SS
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -35,21 +34,14 @@ class HomeFragment : Fragment() {
             val buttonId = resources.getIdentifier("button_$i", "id", requireActivity().packageName)
             val button = root.findViewById<Button>(buttonId)
             button.setOnClickListener {
-                // Handle button click, update hours/minutes/seconds
-                when {
-                    seconds < 60 -> seconds = seconds * 10 + i
-                    minutes < 60 -> {
-                        seconds = i
-                        minutes = minutes * 10 + i
-                    }
-                    else -> {
-                        seconds = i
-                        minutes = i
-                        hours = hours * 10 + i
-                    }
-                }
-                updateTimerDisplay()
+                handleButtonClick(i)
             }
+        }
+
+        // Set click listener for delete button
+        val deleteButton = binding.deleteButton
+        deleteButton.setOnClickListener {
+            handleDeleteButtonClick()
         }
 
         return root
@@ -60,10 +52,29 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
+    private fun handleButtonClick(digit: Int) {
+        if (timeInput.length < maxInputLength) {
+            timeInput += digit
+        }
+        updateTimerDisplay()
+    }
+
+    private fun handleDeleteButtonClick() {
+        if (timeInput.isNotEmpty()) {
+            timeInput = timeInput.substring(0, timeInput.length - 1)
+        }
+        updateTimerDisplay()
+    }
+
     private fun updateTimerDisplay() {
-        val time = String.format("%02d:%02d:%02d", hours, minutes, seconds)
-        binding.hourTextView.text = hours.toString()
-        binding.minuteTextView.text = minutes.toString()
-        binding.secondTextView.text = seconds.toString()
+        val formattedTime = formatTime(timeInput)
+        binding.hourTextView.text = formattedTime.substring(0, 2)
+        binding.minuteTextView.text = formattedTime.substring(3, 5)
+        binding.secondTextView.text = formattedTime.substring(6, 8)
+    }
+
+    private fun formatTime(input: String): String {
+        val paddedInput = input.padStart(maxInputLength, '0') // Pad with leading zeros if needed
+        return "${paddedInput.substring(0, 2)}:${paddedInput.substring(2, 4)}:${paddedInput.substring(4, 6)}"
     }
 }
