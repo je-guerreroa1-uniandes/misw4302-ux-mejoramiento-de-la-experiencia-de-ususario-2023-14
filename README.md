@@ -26,7 +26,7 @@ La carpeta "mobile" contiene la maquetación diseñada específicamente para la 
 
 1. Ten previamente instalado `Node.js` y `angular.js`
 2. Clona este repositorio en tu máquina local: `git clone https://github.com/je-guerreroa1-uniandes/misw4302-ux-mejoramiento-de-la-experiencia-de-ususario-2023-14.git`
-3. Navega a la carpeta "web": `cd web`
+3. Navega a la carpeta "web": `cd optitask`
 4. Instala las dependencias del proyecto: `npm install`
 5. Inicia la aplicación web: `ng serve --open`
 6. Si con el comando anterior no se abre automáticamente tu navegador. Abre tu navegador manualmente y visita `http://localhost:4200` para ver la maquetación web.
