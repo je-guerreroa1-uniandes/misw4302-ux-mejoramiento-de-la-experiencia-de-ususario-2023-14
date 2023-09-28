@@ -2,7 +2,14 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use './css/tokens.css' as tokens;
 // Plus imports for other components in your app.
+
+// @import './css/src/assets/tokens.css';
+// @import './css/src/assets/colors.module.css';
+// @import './css/src/assets/typography.module.css';
+// @import './css/src/assets/theme.light.css' (prefers-color-scheme: light);
+// @import './css/src/assets/theme.dark.css' (prefers-color-scheme: dark);
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -12,7 +19,40 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$optitask-primary: mat.define-palette(mat.$indigo-palette);
+$bright-navy-blue-palette: (
+  50: var(--md-source),
+  100: #badffb,
+  200: #8fcbfa,
+  300: #61b7f7,
+  400: #3ca7f6,
+  500: #0c98f5,
+  600: #078ae7,
+  700: #0078d4,
+  800: #0067c2,
+  900: #0049a3,
+  A100: #c2e4ff,
+  A200: #addcff,
+  A400: #1f9eff,
+  A700: #00518f,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
+  )
+);
+
+$optitask-primary: mat.define-palette($bright-navy-blue-palette);
 $optitask-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
