@@ -43,6 +43,7 @@
         <item name="colorOnComplementaryColorContainer">#301400</item>
         <item name="harmonizeComplementaryColor">false</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
+        <item name="android:fontFamily">@font/font_family</item>
     </style>
 
     <style name="Theme.OptiTask.NoActionBar">
