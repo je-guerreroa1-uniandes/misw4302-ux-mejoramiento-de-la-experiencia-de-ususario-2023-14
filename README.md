@@ -37,6 +37,10 @@ La carpeta "mobile" contiene la maquetación diseñada específicamente para la 
 2. Importa la carpeta "mobile" en tu entorno de desarrollo Android Studio.
 3. Compila y ejecuta la aplicación en un emulador de Android o dispositivo físico.
 
+### Build(APK)
+
+En la carpeta releases se pueden encontrar las versiones compiladas de la aplicación móvil
+
 ## Colaboradores
 
 - [Daniela Báez Rincón - 201422095](https://github.com/BaezRincon)
